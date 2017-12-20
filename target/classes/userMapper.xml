@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> <!--相当于UserMapper接口的实现 namespace必须是UserMapper类路径 -->
+
+<mapper namespace="com.zhiligeo.Login.dao.UserMapper">
+<select id="findByNameAndPassword" parameterType="com.zhiligeo.Login.domain.User"
+resultType="com.zhiligeo.Login.domain.User">
+		select * from login where name=#{name} and password=#{password}
+
+</select>
+</mapper>

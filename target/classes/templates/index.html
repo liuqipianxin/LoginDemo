@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="zh">
+<meta charset="utf-8"/>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+<title>六七片心</title>
+
+<style type="text/css">
+
+* {
+            box-sizing: border-box;
+        }
+       body {
+         
+            font: 16px/20px microsft yahei;
+            background:url(55ffc7529f1920c62ce345cad7e2c6bd.jpg); 
+        }
+
+    .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /* -ms代表ie内核识别码，-moz代表火狐内核识别码，-webkit代表谷歌内核识别码，-o代表欧朋【opera】内核识别码 */
+       -ms-transform: translate(-50%,-50%);
+        -moz-transform: translate(-50%,-50%);
+        -o-transform: translate(-50%,-50%);
+        /* 统一识别 */
+        transform: translate(-50%,-50%); 
+        }
+.container h1 {
+            text-align: center;
+            color: #000000;
+            font-weight: 500;
+        }
+         .container input {
+            width: 320px;
+            display: block;
+            height: 36px;
+            border: 0;
+            padding: 6px 10px;
+            line-height: 24px;
+            margin:32px auto;
+            -webkit-transition: all 0s ease-in 0.1ms;
+            -moz-transition: all 0s ease-in 0.1ms;
+            transition: all 0s ease-in 0.1ms;
+        }  
+</style>
+</head>
+
+<body>
+<div class="container">
+<h1 >Welcome</h1>
+<form method="POST" th:action="@{/userLogin}" th:object="${user}">
+  <input type="text" placeholder="用户名" id="username" th:field="*{name}"/>
+  <input type="password" placeholder="密码" id="password" th:field="*{password}" />
+  <input type="submit" value="登录"/>
+</form>
+</div>
+</body>
+</html>
